@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://be6003gnmkguo"]
+
+[ext_resource type="Texture2D" uid="uid://bbymiu6uilx5r" path="res://sprites/Hana Caraka Crops - Free/Crops/Fall/Spinach.png" id="1_1debb"]
+[ext_resource type="Script" path="res://scripts/spinach_seedpack.gd" id="1_xtj8p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx8vs"]
+atlas = ExtResource("1_1debb")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6788"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx8vs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bu1w6"]
+size = Vector2(8, 8)
+
+[node name="spinach_seedpack" type="StaticBody2D"]
+script = ExtResource("1_xtj8p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u6788")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_bu1w6")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

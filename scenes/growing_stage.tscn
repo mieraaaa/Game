@@ -1,0 +1,342 @@
+[gd_scene load_steps=47 format=3 uid="uid://gm4srfoqa45i"]
+
+[ext_resource type="Script" path="res://scripts/growing_stage.gd" id="1_m6m5t"]
+[ext_resource type="Texture2D" uid="uid://31xyauvpb6xg" path="res://sprites/Hana Caraka Crops - Free/misc.png" id="1_p88b5"]
+[ext_resource type="Texture2D" uid="uid://sovm03tq7teg" path="res://sprites/Hana Caraka Crops - Free/Crops/Fall/Carrot.png" id="2_1nafq"]
+[ext_resource type="Texture2D" uid="uid://dtqqc4apo0a7e" path="res://sprites/Hana Caraka Crops - Free/Crops/Summer/Onion.png" id="3_wodum"]
+[ext_resource type="Texture2D" uid="uid://dj6jfm7k1lhls" path="res://sprites/Hana Caraka Crops - Free/Crops/Summer/onion_ver2.png" id="4_l2881"]
+[ext_resource type="Texture2D" uid="uid://b0exqya8y7soj" path="res://sprites/Hana Caraka Crops - Free/Crops/Spring/Potato.png" id="5_2i42v"]
+[ext_resource type="Texture2D" uid="uid://b5jg33wcytvpk" path="res://sprites/Hana Caraka Crops - Free/Crops/Spring/potato_ver2.png" id="6_ghait"]
+[ext_resource type="Texture2D" uid="uid://cg64b3n7qxyqa" path="res://sprites/Hana Caraka Crops - Free/Crops/Summer/Radish.png" id="7_sboha"]
+[ext_resource type="Texture2D" uid="uid://nquljqvad2rl" path="res://sprites/Hana Caraka Crops - Free/Crops/Summer/radish_ver2.png" id="8_m7f3g"]
+[ext_resource type="Texture2D" uid="uid://bbymiu6uilx5r" path="res://sprites/Hana Caraka Crops - Free/Crops/Fall/Spinach.png" id="9_f0dvj"]
+[ext_resource type="Texture2D" uid="uid://24e0qpsabhdj" path="res://sprites/Hana Caraka Crops - Free/Crops/Spring/Turnip.png" id="10_qsmem"]
+[ext_resource type="Texture2D" uid="uid://bgxi48a61nwmh" path="res://sprites/Hana Caraka Crops - Free/Crops/Spring/turnip_ver2.png" id="11_eplrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph8wo"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tjer"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph8wo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4cee"]
+size = Vector2(12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c6wb"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihoka"]
+atlas = ExtResource("2_1nafq")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jioyl"]
+atlas = ExtResource("2_1nafq")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yoqd5"]
+atlas = ExtResource("2_1nafq")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_575jk"]
+atlas = ExtResource("2_1nafq")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1owqv"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6tge"]
+atlas = ExtResource("3_wodum")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wui0x"]
+atlas = ExtResource("3_wodum")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wa7b"]
+atlas = ExtResource("4_l2881")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pi15l"]
+atlas = ExtResource("3_wodum")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtq4c"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5pr8"]
+atlas = ExtResource("5_2i42v")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cimw1"]
+atlas = ExtResource("5_2i42v")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmnu3"]
+atlas = ExtResource("6_ghait")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajtmj"]
+atlas = ExtResource("5_2i42v")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5t0l"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2buc2"]
+atlas = ExtResource("7_sboha")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1en7m"]
+atlas = ExtResource("7_sboha")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id268"]
+atlas = ExtResource("8_m7f3g")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8y6q6"]
+atlas = ExtResource("7_sboha")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya48b"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x3vh"]
+atlas = ExtResource("9_f0dvj")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoxsy"]
+atlas = ExtResource("9_f0dvj")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21t30"]
+atlas = ExtResource("9_f0dvj")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48a60"]
+atlas = ExtResource("9_f0dvj")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iufs"]
+atlas = ExtResource("1_p88b5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq4wi"]
+atlas = ExtResource("10_qsmem")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wev6n"]
+atlas = ExtResource("10_qsmem")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4qm"]
+atlas = ExtResource("11_eplrn")
+region = Rect2(64, 7, 16, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qjg4"]
+atlas = ExtResource("10_qsmem")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q14ij"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c6wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihoka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jioyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yoqd5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_575jk")
+}],
+"loop": true,
+"name": &"carrot_grow",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": true,
+"name": &"no_plant",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1owqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6tge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wui0x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wa7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pi15l")
+}],
+"loop": true,
+"name": &"onion_grow",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtq4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5pr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cimw1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmnu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajtmj")
+}],
+"loop": true,
+"name": &"potato_grow",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5t0l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2buc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1en7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_id268")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8y6q6")
+}],
+"loop": true,
+"name": &"radish_grow",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya48b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x3vh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoxsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21t30")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48a60")
+}],
+"loop": true,
+"name": &"spinach_grow",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iufs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq4wi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wev6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4qm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qjg4")
+}],
+"loop": true,
+"name": &"turnip_grow",
+"speed": 0.0
+}]
+
+[node name="growing_stage" type="StaticBody2D"]
+script = ExtResource("1_m6m5t")
+
+[node name="soil" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5tjer")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_x4cee")
+
+[node name="plant" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q14ij")
+animation = &"no_plant"
+
+[node name="carrot_growtimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="spinach_growtimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="potato_growtimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="turnip_growtimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="onion_growtimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="radish_growtimer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="timeout" from="carrot_growtimer" to="." method="_on_carrot_growtimer_timeout"]
+[connection signal="timeout" from="spinach_growtimer" to="." method="_on_spinach_growtimer_timeout"]
+[connection signal="timeout" from="potato_growtimer" to="." method="_on_potato_growtimer_timeout"]
+[connection signal="timeout" from="turnip_growtimer" to="." method="_on_turnip_growtimer_timeout"]
+[connection signal="timeout" from="onion_growtimer" to="." method="_on_onion_growtimer_timeout"]
+[connection signal="timeout" from="radish_growtimer" to="." method="_on_radish_growtimer_timeout"]

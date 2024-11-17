@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvmmdqhcd14ek"]
+
+[ext_resource type="Script" path="res://scripts/turnip_seedpack.gd" id="1_0sxia"]
+[ext_resource type="Texture2D" uid="uid://24e0qpsabhdj" path="res://sprites/Hana Caraka Crops - Free/Crops/Spring/Turnip.png" id="1_h1anf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spi62"]
+atlas = ExtResource("1_h1anf")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4mxpv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spi62")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kuagr"]
+size = Vector2(8, 8)
+
+[node name="turnip_seedpack" type="StaticBody2D"]
+script = ExtResource("1_0sxia")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4mxpv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_kuagr")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
